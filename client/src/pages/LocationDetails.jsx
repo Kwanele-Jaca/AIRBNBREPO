@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 
 import Header from "../components/Header";
 import api from "../api/api";
+import { useNavigate } from "react-router-dom";
 
 import "./LocationDetails.css";
 
@@ -12,6 +13,9 @@ function LocationDetails() {
 
     const [property, setProperty] = useState(null);
     const [showReservation, setShowReservation] = useState(false);
+    const navigate = useNavigate();
+    const user = JSON.parse(localStorage.getItem("user"));
+
 
     useEffect(() => {
         loadProperty();
@@ -34,6 +38,17 @@ function LocationDetails() {
     if (!property) {
         return <h2 style={{ padding: "40px" }}>Loading...</h2>;
     }
+
+    function handleReserve() {
+
+  if (!user) {
+    alert("Please log in to reserve this property.");
+    navigate("/login");
+    return;
+  }
+
+  setShowReservation(true);
+}
     return (
 
         <>
@@ -473,7 +488,7 @@ After that, partial refunds may apply according to Airbnb policies.
         </div>
 
         <button className="reserve-btn"
-        onClick={()=>setShowReservation(true)}  >
+        onClick={handleReserve}  >
 
             Reserve
 
