@@ -1,6 +1,7 @@
 import "./Header.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import {
   FaBars,
@@ -15,7 +16,25 @@ import logo from "../assets/airbnb-logo.svg";
 
 function Header() {
   const [showHostMenu, setShowHostMenu] = useState(false);
-const [showUserMenu, setShowUserMenu] = useState(false);
+  const [showUserMenu, setShowUserMenu] = useState(false);
+
+
+  const navigate = useNavigate();
+
+const user = JSON.parse(localStorage.getItem("user"));
+
+function handleLogout() {
+  localStorage.removeItem("user");
+  localStorage.removeItem("token");
+
+  alert("Logged out successfully.");
+
+  navigate("/");
+}
+
+
+
+
   return (
     <header className="header">
 
@@ -136,18 +155,37 @@ const [showUserMenu, setShowUserMenu] = useState(false);
   </div>
 
   {showUserMenu && (
-    <div className="dropdown-menu">
+  <div className="dropdown-menu">
 
-      <Link to="/signup">
-        Sign Up
-      </Link>
+    {!user ? (
+      <>
+        <Link to="/signup">Sign Up</Link>
+        <Link to="/login">Log In</Link>
+      </>
+    ) : (
+      <>
+        <div className="menu-user">
+          Hello, <strong>{user.name}</strong>
+        </div>
 
-      <Link to="/login">
-        Log In
-      </Link>
+        {user.role === "host" && (
+          <>
+            <Link to="/host">Host Dashboard</Link>
+            <Link to="/my-listings">My Listings</Link>
+          </>
+        )}
 
-    </div>
-  )}
+        <button
+          className="logout-btn"
+          onClick={handleLogout}
+        >
+          Logout
+        </button>
+      </>
+    )}
+
+  </div>
+)}
 
 </div>
       </div>
