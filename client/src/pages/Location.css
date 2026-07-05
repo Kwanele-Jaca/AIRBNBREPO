@@ -1,0 +1,98 @@
+.location-page {
+  padding: 40px 60px;
+}
+
+.location-page h1 {
+  margin-bottom: 30px;
+}
+
+.filter-section {
+  margin-bottom: 35px;
+}
+
+.filter-section label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.filter-section select {
+  padding: 12px;
+  width: 280px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.property-list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.property-card {
+  display: flex;
+  gap: 25px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.property-card:hover {
+  transform: scale(1.01);
+}
+
+.property-card img {
+  width: 320px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.property-info {
+  flex: 1;
+}
+
+.property-info h2 {
+  margin-bottom: 8px;
+}
+
+.property-info p {
+  margin: 10px 0;
+  color: #555;
+}
+
+.price {
+  text-align: right;
+  min-width: 120px;
+}
+
+.price h2 {
+  color: #ff385c;
+}
+
+@media (max-width: 768px) {
+
+  .location-page {
+    padding: 20px;
+  }
+
+  .property-card {
+    flex-direction: column;
+  }
+
+  .property-card img {
+    width: 100%;
+    height: 250px;
+  }
+
+  .price {
+    text-align: left;
+  }
+
+  .filter-section select {
+    width: 100%;
+  }
+
+}

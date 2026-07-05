@@ -1,0 +1,154 @@
+.host-dashboard{
+
+    background:#f7f7f7;
+
+    min-height:100vh;
+
+    padding:50px;
+}
+
+.host-card{
+
+    background:white;
+
+    width:900px;
+
+    margin:auto;
+
+    padding:40px;
+
+    border-radius:18px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.host-card h1{
+
+    margin-bottom:35px;
+
+    color:#ff385c;
+}
+
+.host-card form{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+}
+
+.host-card label{
+
+    font-weight:600;
+}
+
+.host-card input,
+.host-card select,
+.host-card textarea{
+
+    padding:14px;
+
+    border:1px solid #ddd;
+
+    border-radius:10px;
+
+    font-size:15px;
+}
+
+.host-card textarea{
+
+    resize:none;
+}
+
+.host-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:20px;
+}
+
+.preview-container{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:15px;
+
+    margin-top:10px;
+}
+
+.preview-container img{
+
+    width:100%;
+
+    height:170px;
+
+    object-fit:cover;
+
+    border-radius:12px;
+}
+
+.host-card button{
+
+    margin-top:20px;
+
+    background:#ff385c;
+
+    color:white;
+
+    border:none;
+
+    padding:16px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:17px;
+
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+.host-card button:hover{
+
+    background:#e61e4d;
+}
+.host-card input,
+.host-card select,
+.host-card textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  outline: none;
+  font-size: 15px;
+}
+
+.host-card input:focus,
+.host-card select:focus,
+.host-card textarea:focus {
+  border-color: #ff385c;
+}
+
+.host-card button {
+  width: 100%;
+  padding: 14px;
+  background: #ff385c;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.host-card button:hover {
+  background: #e61e4d;
+}
